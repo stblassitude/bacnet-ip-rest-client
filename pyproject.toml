@@ -1,19 +1,49 @@
 [project]
 name = "bacnet-ip-rest-client"
 version = "0.1.0"
+authors = [
+    { name = "Stefan Bethke", email = "stb@lassitu.de" },
+]
 description = "Async Python client for the BACnet/IP REST proxy"
 readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.11"
+keywords = ["bacnet", "building-automation", "rest", "httpx", "asyncio"]
 dependencies = [
     "httpx>=0.28.1",
 ]
 
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Framework :: AsyncIO",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Home Automation",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
 [project.urls]
 Homepage = "https://github.com/stblassitude/bacnet-ip-rest-client"
+Documentation = "https://stblassitude.github.io/bacnet-ip-rest-client/"
+Issues = "https://github.com/stblassitude/bacnet-ip-rest-client/issues"
 
 [dependency-groups]
 dev = [
     "pytest>=8",
+]
+# MkDocs 2.0 is incompatible with Material for MkDocs
+docs = [
+    "mkdocs>=1.6,<2",
+    "mkdocs-material>=9.5",
+    "mkdocstrings[python]>=0.29",
+    "ruff",
 ]
 
 [build-system]
