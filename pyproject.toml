@@ -1,6 +1,7 @@
 [project]
 name = "bacnet-ip-rest-client"
-version = "1.0.2"
+# Set automatically from the git tag by .github/workflows/publish.yml when releasing.
+version = "0.1.0"
 authors = [
     { name = "Stefan Bethke", email = "stb@lassitu.de" },
 ]
