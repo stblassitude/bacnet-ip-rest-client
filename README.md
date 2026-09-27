@@ -17,6 +17,17 @@ async with Client("https://bacnet-proxy.example.net", token) as client:
     await client.write_property("my-device", "analog-value,5", "present-value", None, priority=10)  # relinquish
 ```
 
+## Authentication
+
+Every request goes through the proxy's
+[authentication and authorization](https://stblassitude.github.io/bacnet-ip-rest-proxy/configuration/#authentication).
+Pass `token` to `Client` to send it as `Authorization: Bearer <token>`. The
+token can be one of the opaque tokens configured on the proxy, or a JWT it
+accepts, such as a user's OIDC access token. Without a token, the proxy
+only allows a request if its rules grant access without one, for example
+by the client's IP address. A request the proxy denies raises
+`UnauthorizedError` or `ForbiddenError`.
+
 ## Relationship to bacpypes3
 
 `Client` has the same role as a bacpypes3 `Application`, and
