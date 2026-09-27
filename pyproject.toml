@@ -1,0 +1,21 @@
+[project]
+name = "bacnet-ip-rest-client"
+version = "0.1.0"
+description = "Async Python client for the BACnet/IP REST proxy"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.28.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/stblassitude/bacnet-ip-rest-client"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
